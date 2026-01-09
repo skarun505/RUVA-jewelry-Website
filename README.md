@@ -125,3 +125,6 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 **Built with ❤️ for Valentine's Day jewelry shopping**
+
+*Last deployed: 2026-01-09 - Images folder case fix for Vercel*
+
