@@ -13,7 +13,7 @@
 // Buttons now full-width on mobile with proper padding
 
 // ✅ 4. UPDATE PRODUCT IMAGES (COMPLETED)
-// Fixed all product image paths to use 'Images/' prefix
+// Fixed all product image paths to use 'images/' prefix
 // All 20 products now have correct image paths
 
 /* 
