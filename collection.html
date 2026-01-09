@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Collection - Premium 925 Silver Jewelry | RUVA</title>
+    <meta name="description"
+        content="Explore RUVA's Valentine Collection - Rings, Necklaces, Bracelets & Couple Jewelry. 925 Sterling Silver. Flat 25% OFF">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="button-animations.css">
+    <link rel="stylesheet" href="modern-header.css">
+    <link rel="stylesheet" href="enhanced-toast-pricing.css">
+</head>
+
+<body class="font-inter bg-gray-50">
+
+    <!-- Offer Banner (Sticky Mobile) -->
+    <div id="offerBanner"
+        class="bg-gradient-to-r from-rose-600 to-pink-500 text-white py-3 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between flex-wrap gap-2 text-center md:text-left">
+                <div class="flex-1 text-sm md:text-base font-medium">
+                    <span class="inline-block">🎁 Valentine Special:</span>
+                    <span class="font-bold ml-2">25% OFF + Free Gift Box + Free Express Delivery</span>
+                </div>
+                <div id="countdown" class="text-xs md:text-sm font-bold bg-white/20 px-4 py-1 rounded-full">
+                    <i class="far fa-clock mr-1"></i>
+                    <span id="timer">5d 23h 45m</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="modern-header">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <div class="flex items-center">
+                    <a href="index.html" class="header-logo">
+                        <img src="images/RUVA transprent Logo.png" alt="RUVA Logo">
+                        <div class="header-logo-text hidden md:block">
+                            <h1 class="text-xl font-playfair font-bold text-purple-primary">RUVA</h1>
+                            <p class="text-xs text-gray-600">A New Era of Jewelry</p>
+                        </div>
+                    </a>
+                </div>
+
+                <ul class="desktop-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="collection.html">Valentine Collection</a></li>
+                    <li><a href="gift-guide.html">Gift Guide</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+
+                <div class="header-icons">
+                    <a href="#" class="header-icon hidden md:flex">
+                        <i class="far fa-heart text-xl"></i>
+                    </a>
+                    <a href="cart.html" class="header-icon relative">
+                        <i class="fas fa-shopping-bag text-xl"></i>
+                        <span id="cartCount" class="cart-badge">0</span>
+                    </a>
+                    <button class="hamburger-btn">
+                        <div class="hamburger-icon">
+                            <svg viewBox="0 0 32 32">
+                                <path class="menu-line-1"
+                                    d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22" />
+                                <path class="menu-line-2" d="M7 16 27 16" />
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-links">
+                <a href="index.html">Home</a>
+                <a href="collection.html">Valentine Collection</a>
+                <a href="gift-guide.html">Gift Guide</a>
+                <a href="about.html">About</a>
+            </div>
+
+            <div class="mobile-menu-actions">
+                <a href="cart.html" class="btn-outline">
+                    <i class="fas fa-shopping-bag mr-2"></i>
+                    View Cart
+                </a>
+                <a href="collection.html" class="btn-primary">
+                    <i class="fas fa-gift mr-2"></i>
+                    Start Shopping
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="bg-gradient-to-br from-pink-100 via-rose-50 to-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h1 class="font-playfair text-4xl md:text-5xl font-bold mb-4">
+                    Valentine's Collection
+                </h1>
+                <p class="text-lg text-gray-600 mb-6">
+                    Curated 925 silver jewelry to celebrate your love
+                </p>
+                <div class="flex items-center justify-center gap-2 text-sm text-gray-600">
+                    <a href="index.html" class="hover:text-rose-600">Home</a>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                    <span class="text-rose-600">Collection</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters & Products -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+
+                <!-- Sidebar Filters (Desktop) -->
+                <aside class="hidden md:block">
+                    <div class="bg-white rounded-2xl p-6 shadow-md sticky top-32">
+
+                        <!-- Category Filter -->
+                        <div class="mb-8">
+                            <h3 class="font-semibold text-lg mb-4">Categories</h3>
+                            <div class="space-y-3">
+                                <label class="flex items-center cursor-pointer hover:text-rose-600 transition">
+                                    <input type="radio" name="category" value="all" class="custom-radio mr-3" checked>
+                                    <span>All Products</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer hover:text-rose-600 transition">
+                                    <input type="radio" name="category" value="rings" class="custom-radio mr-3">
+                                    <span>Rings 💍</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer hover:text-rose-600 transition">
+                                    <input type="radio" name="category" value="necklaces" class="custom-radio mr-3">
+                                    <span>Necklaces 💖</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer hover:text-rose-600 transition">
+                                    <input type="radio" name="category" value="bracelets" class="custom-radio mr-3">
+                                    <span>Bracelets ✨</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer hover:text-rose-600 transition">
+                                    <input type="radio" name="category" value="couple" class="custom-radio mr-3">
+                                    <span>Couple Jewelry 💑</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer hover:text-rose-600 transition">
+                                    <input type="radio" name="category" value="minimal" class="custom-radio mr-3">
+                                    <span>Minimal Daily Wear</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Price Filter -->
+                        <div class="mb-8 border-t pt-6">
+                            <h3 class="font-semibold text-lg mb-4">Price Range</h3>
+                            <div class="space-y-3">
+                                <label class="flex items-center cursor-pointer hover:text-rose-600 transition">
+                                    <input type="checkbox" name="price" value="0-999" class="custom-radio mr-3">
+                                    <span>Under ₹999</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer hover:text-rose-600 transition">
+                                    <input type="checkbox" name="price" value="1000-1499" class="custom-radio mr-3">
+                                    <span>₹1,000 - ₹1,499</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer hover:text-rose-600 transition">
+                                    <input type="checkbox" name="price" value="1500-1999" class="custom-radio mr-3">
+                                    <span>₹1,500 - ₹1,999</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer hover:text-rose-600 transition">
+                                    <input type="checkbox" name="price" value="2000" class="custom-radio mr-3">
+                                    <span>Above ₹2,000</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Features Filter -->
+                        <div class="border-t pt-6">
+                            <h3 class="font-semibold text-lg mb-4">Features</h3>
+                            <div class="space-y-3">
+                                <label class="flex items-center cursor-pointer hover:text-rose-600 transition">
+                                    <input type="checkbox" name="features" value="adjustable" class="custom-radio mr-3">
+                                    <span>Adjustable Size</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer hover:text-rose-600 transition">
+                                    <input type="checkbox" name="features" value="featured" class="custom-radio mr-3">
+                                    <span>Bestsellers</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer hover:text-rose-600 transition">
+                                    <input type="checkbox" name="features" value="instock" class="custom-radio mr-3"
+                                        checked>
+                                    <span>In Stock Only</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Clear Filters -->
+                        <button id="clearFilters"
+                            class="w-full mt-8 px-6 py-3 border-2 border-gray-300 rounded-xl font-medium hover:bg-gray-50 transition">
+                            Clear All Filters
+                        </button>
+                    </div>
+                </aside>
+
+                <!-- Products Grid -->
+                <div class="md:col-span-3">
+
+                    <!-- Mobile Filter Toggle -->
+                    <div class="md:hidden mb-6 flex gap-3">
+                        <button id="mobileFilterBtn"
+                            class="flex-1 bg-white px-6 py-3 rounded-xl shadow-md font-medium flex items-center justify-center gap-2">
+                            <i class="fas fa-filter"></i>
+                            Filters
+                        </button>
+                        <select id="mobileSortBy" class="flex-1 bg-white px-6 py-3 rounded-xl shadow-md font-medium">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="newest">Newest First</option>
+                        </select>
+                    </div>
+
+                    <!-- Sort & Count -->
+                    <div class="flex items-center justify-between mb-6">
+                        <p class="text-gray-600">
+                            Showing <span id="productCount" class="font-semibold text-rose-600">20</span> products
+                        </p>
+                        <select id="sortBy"
+                            class="hidden md:block bg-white px-6 py-2 rounded-xl border-2 border-gray-200 font-medium">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="newest">Newest First</option>
+                        </select>
+                    </div>
+
+                    <!-- Products Grid -->
+                    <div id="productsGrid" class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                        <!-- Products loaded via JavaScript -->
+                    </div>
+
+                    <!-- Load More -->
+                    <div class="text-center mt-12">
+                        <button id="loadMore" class="cta-button-outline hidden">
+                            Load More Products
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/1234567890" target="_blank"
+        class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="font-playfair text-2xl font-bold mb-4">RUVA</h3>
+                    <p class="text-gray-400 mb-4">Elegance that Speaks Love</p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-rose-600 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-rose-600 transition">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-rose-600 transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="collection.html" class="hover:text-rose-400 transition">Shop Collection</a></li>
+                        <li><a href="gift-guide.html" class="hover:text-rose-400 transition">Gift Guide</a></li>
+                        <li><a href="about.html" class="hover:text-rose-400 transition">About RUVA</a></li>
+                        <li><a href="contact.html" class="hover:text-rose-400 transition">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Customer Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="shipping.html" class="hover:text-rose-400 transition">Shipping Policy</a></li>
+                        <li><a href="returns.html" class="hover:text-rose-400 transition">Return & Refund</a></li>
+                        <li><a href="privacy.html" class="hover:text-rose-400 transition">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-rose-400 transition">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Stay Connected</h4>
+                    <p class="text-gray-400 mb-4 text-sm">Get 10% off your first order!</p>
+                    <form class="space-y-3">
+                        <input type="email" placeholder="Your email"
+                            class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:border-rose-500">
+                        <button type="submit"
+                            class="w-full bg-rose-600 hover:bg-rose-700 px-6 py-2 rounded-lg font-medium transition">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8">
+                <p class="text-center text-gray-400 text-sm">
+                    © 2026 RUVA. All rights reserved. Made with ❤️ for timeless love.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+    <script src="modern-header.js"></script>
+    <script src="button-effects.js"></script>
+    <script src="collection.js"></script>
+</body>
+
+</html>

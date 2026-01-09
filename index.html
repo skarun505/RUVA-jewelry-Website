@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️ RUVA - Say 'I Love You' in Pure Silver | Valentine's Special 2026</title>
+    <meta name="description"
+        content="Premium 925 silver jewelry for Valentine's Day. Special Offer: Buy Any 2 @ ₹999 + Get Your Love's Name Jewel @ ₹143X! Limited Time Only">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/RUVA transprent Logo.png">
+    <link rel="apple-touch-icon" href="images/RUVA Logo.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fomo-styles.css">
+    <link rel="stylesheet" href="button-animations.css">
+    <link rel="stylesheet" href="modern-header.css">
+    <link rel="stylesheet" href="enhanced-toast-pricing.css">
+
+    <style>
+        /* Tailwind Config for Purple Theme */
+        .bg-purple-primary {
+            background: #6B2C91;
+        }
+
+        .text-purple-primary {
+            color: #6B2C91;
+        }
+
+        .border-purple-primary {
+            border-color: #6B2C91;
+        }
+
+        .bg-romantic-gradient {
+            background: linear-gradient(135deg, #6B2C91 0%, #D81B60 50%, #C2185B 100%);
+        }
+    </style>
+</head>
+
+<body class="font-inter bg-white">
+
+    <!-- FOMO Sticky Offer Bar -->
+    <div class="sticky-offer-bar">
+        <div class="offer-scroll-container">
+            <div class="offer-scroll-content">
+                <div class="offer-item">
+                    <span class="animate-pulse">🔥 FLASH SALE:</span>
+                    <span class="ml-2">Buy ANY 2 @ ₹999 + Get Your Love's Name Jewel @ ₹143[Letter Count]!</span>
+                </div>
+                <div class="offer-item">
+                    <i class="far fa-clock mr-1"></i>
+                    <span id="timer">5d 23h 45m</span>
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="offer-item">
+                    <span class="animate-pulse">🔥 FLASH SALE:</span>
+                    <span class="ml-2">Buy ANY 2 @ ₹999 + Get Your Love's Name Jewel @ ₹143[Letter Count]!</span>
+                </div>
+                <div class="offer-item">
+                    <i class="far fa-clock mr-1"></i>
+                    <span id="timer2">5d 23h 45m</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="modern-header">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html" class="header-logo">
+                        <img src="images/RUVA transprent Logo.png" alt="RUVA Logo">
+                        <div class="header-logo-text hidden md:block">
+                            <h1 class="text-xl font-playfair font-bold text-purple-primary">RUVA</h1>
+                            <p class="text-xs text-gray-600">A New Era of Jewelry</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <ul class="desktop-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="collection.html">Valentine Collection</a></li>
+                    <li><a href="gift-guide.html">Gift Guide</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+
+                <!-- Icons -->
+                <div class="header-icons">
+                    <!-- Live Viewers Badge -->
+                    <div class="header-live-viewers hidden md:flex">
+                        <span class="live-dot"></span>
+                        <span id="headerLiveViewers">10,247</span> viewing
+                    </div>
+                    <a href="#" class="header-icon hidden md:flex">
+                        <i class="far fa-heart text-xl"></i>
+                    </a>
+                    <a href="cart.html" class="header-icon relative">
+                        <i class="fas fa-shopping-bag text-xl"></i>
+                        <span id="cartCount" class="cart-badge">0</span>
+                    </a>
+                    <button class="hamburger-btn">
+                        <div class="hamburger-icon">
+                            <svg viewBox="0 0 32 32">
+                                <path class="menu-line-1"
+                                    d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22" />
+                                <path class="menu-line-2" d="M7 16 27 16" />
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-links">
+                <a href="index.html">Home</a>
+                <a href="collection.html">Valentine Collection</a>
+                <a href="gift-guide.html">Gift Guide</a>
+                <a href="about.html">About</a>
+            </div>
+
+            <div class="mobile-menu-actions">
+                <a href="cart.html" class="btn-outline">
+                    <i class="fas fa-shopping-bag mr-2"></i>
+                    View Cart
+                </a>
+                <a href="collection.html" class="btn-primary">
+                    <i class="fas fa-gift mr-2"></i>
+                    Start Shopping
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section with Responsive Background Image -->
+    <section class="relative overflow-hidden">
+        <!-- Responsive Background Image -->
+        <div class="absolute inset-0">
+            <picture>
+                <!-- Mobile Image (portrait) -->
+                <source media="(max-width: 768px)" srcset="images/hero-banner-mobile.png">
+                <!-- Desktop Image (landscape) -->
+                <img src="images/hero-banner.png" alt="Valentine's Banner"
+                    class="w-full h-full object-cover opacity-90">
+            </picture>
+        </div>
+
+        <!--Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-900/40 via-pink-900/30 to-red-900/40"></div>
+
+        <div class="relative container mx-auto px-4 py-16 md:py-24 z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="text-center md:text-left space-y-8">
+                    <div
+                        class="inline-block bg-white/90 backdrop-blur-sm text-purple-primary px-6 py-3 rounded-full text-sm font-bold mb-4 shadow-lg">
+                        <span class="flash-sale">✨ Valentine's Special Collection 2026 ✨</span>
+                    </div>
+
+                    <h1 class="font-playfair text-5xl md:text-7xl font-bold leading-tight text-white drop-shadow-2xl">
+                        Say <span class="valentine-shimmer text-6xl md:text-8xl">I Love You</span><br>
+                        in Pure Silver
+                        <span class="text-5xl md:text-7xl inline-block animate-heartbeat">💕</span>
+                    </h1>
+
+                    <p class="text-xl md:text-2xl text-white leading-relaxed drop-shadow-lg">
+                        Handcrafted 925 Sterling Silver Jewelry<br>
+                        <span class="font-semibold text-pink-200">for Timeless Love</span>
+                    </p>
+
+                    <!--CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="collection.html" class="cta-button-primary text-lg shadow-2xl">
+                            Shop Valentine's Collection
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#special-offer" class="cta-button-secondary bg-white/90 backdrop-blur-sm shadow-2xl">
+                            <i class="fas fa-gift mr-2"></i>
+                            Special Offer
+                        </a>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="flex flex-wrap gap-6 pt-6 justify-center md:justify-start">
+                        <div
+                            class="flex items-center gap-2 text-sm bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+                            <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-certificate text-purple-600"></i>
+                            </div>
+                            <span class="font-medium text-purple-900">925 Hallmark</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 text-sm bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+                            <div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-shipping-fast text-pink-600"></i>
+                            </div>
+                            <span class="font-medium text-purple-900">Free Delivery</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 text-sm bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+                            <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-undo text-red-600"></i>
+                            </div>
+                            <span class="font-medium text-purple-900">7-Day Return</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right - Love Points -->
+                <div class="hidden md:block">
+                    <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 shadow-2xl border-2 border-white/20">
+                        <div class="text-center space-y-4">
+                            <div class="text-6xl mb-4 animate-bounce">💝</div>
+                            <h3 class="text-2xl font-bold text-white">Limited Stock Alert!</h3>
+                            <div class="flex flex-col items-center justify-center gap-3">
+                                <span class="stock-urgent text-lg px-6 py-2" id="stockCountBadge">Only 23 pieces
+                                    left</span>
+                                <div id="stock sold-fast" class="hidden text-pink-200 text-sm font-bold animate-pulse">
+                                    🔥 Stocks are selling out fast!
+                                </div>
+                            </div>
+                            <p class="text-white/90">Orders today ship before Feb 14!</p>
+
+                            <!-- Dynamic Cart Activity -->
+                            <div id="cartActivityNotification"
+                                class="bg-white/90 text-purple-900 px-4 py-2 rounded-xl text-sm font-semibold shadow-inner transform translate-y-4 opacity-0 transition-all duration-500">
+                                <i class="fas fa-shopping-cart mr-2 text-pink-600"></i>
+                                <span id="cartActivityText">2 customers added to cart</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Name-Based Pricing Offer -->
+    <section id="special-offer" class="py-16 relative overflow-hidden"
+        style="background: linear-gradient(135deg, #F8BBD0 0%, #E1BEE7 100%);">
+        <!-- Floating Hearts -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden">
+            <span class="floating-heart" style="left: 10%; animation-delay: 0s;">💕</span>
+            <span class="floating-heart" style="left: 30%; animation-delay: 1s;">💖</span>
+            <span class="floating-heart" style="left: 50%; animation-delay: 0.5s;">💗</span>
+            <span class="floating-heart" style="left: 70%; animation-delay: 1.5s;">💝</span>
+            <span class="floating-heart" style="left: 90%; animation-delay: 0.8s;">💘</span>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <div class="inline-block flash-sale text-xl px-8 py-3 mb-6">
+                        💝 EXCLUSIVE VALENTINE'S OFFER 💝
+                    </div>
+                    <h2 class="font-playfair text-4xl md:text-5xl font-bold mb-4 text-purple-900">
+                        Buy Any 2 @ ₹999 Each<br>
+                        <span class="text-pink-700">+ Get Your Love's Name Jewel!</span>
+                    </h2>
+                    <p class="text-xl text-purple-800">
+                        Price based on your loved one's name: <strong>₹143[Letter Count]</strong>
+                    </p>
+                </div>
+
+                <!-- Name Calculator -->
+                <div class="name-price-calculator max-w-2xl mx-auto">
+                    <h3 class="text-2xl font-bold text-center mb-6 text-purple-900">
+                        💖 Calculate Your Love's Price
+                    </h3>
+
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-purple-900 font-semibold mb-3 text-lg">
+                                Enter Your Loved One's Name:
+                            </label>
+                            <input type="text" id="loveName" placeholder="e.g., SOWMYA" class="name-input uppercase"
+                                maxlength="15">
+                        </div>
+
+                        <div class="bg-white/60 rounded-2xl p-8 text-center">
+                            <p class="text-lg text-purple-800 mb-2">Your Special Price:</p>
+                            <div class="calculated-price" id="calculatedPrice">₹1430</div>
+                            <p class="text-sm text-purple-700 mt-2">
+                                (<span id="letterCount">0</span> letters × ₹ 143 per letter)
+                            </p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-6 shadow-lg">
+                            <h4 class="font-bold text-purple-900 mb-4 text-center text-lg">
+                                How It Works:
+                            </h4>
+                            <ol class="space-y-3 text-purple-800">
+                                <li class="flex items-start gap-3">
+                                    <span
+                                        class="flex-shrink-0 w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold">1</span>
+                                    <span>Select ANY 2 jewelry pieces @ ₹999 each = ₹1,998</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span
+                                        class="flex-shrink-0 w-8 h-8 bg-pink-600 text-white rounded-full flex items-center justify-center font-bold">2</span>
+                                    <span>Choose your favorite jewel for your loved one</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span
+                                        class="flex-shrink-0 w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold">3</span>
+                                    <span>Pay ₹143 × (number of letters in their name)</span>
+                                </li>
+                            </ol>
+                            <div class="mt-6 p-4 bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl">
+                                <p class="text-center font-bold text-purple-900">
+                                    Example: "SOWMYA" = 6 letters = ₹1,436 for 3rd piece!
+                                </p>
+                            </div>
+                        </div>
+
+                        <a href="collection.html"
+                            class="cta-button-primary w-full text-center text-lg btn-start-shopping">
+                            <i class="fas fa-gift mr-2"></i>
+                            Start Shopping Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-playfair text-3xl md:text-4xl font-bold mb-4 text-purple-900">Shop by Category</h2>
+                <p class="text-gray-600">Find the perfect piece for your loved one</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
+                <a href="collection.html?category=rings" class="category-card group">
+                    <div
+                        class="aspect-square bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl mb-3 flex items-center justify-center overflow-hidden relative product-spotlight shadow-md group-hover:shadow-xl transition-shadow">
+                        <img src="images/category-rings.png" alt="Rings"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                    </div>
+                    <h3 class="font-semibold text-center">Rings 💍</h3>
+                    <p class="text-xs text-gray-500 text-center">25+ Designs</p>
+                </a>
+
+                <a href="collection.html?category=necklaces" class="category-card group">
+                    <div
+                        class="aspect-square bg-gradient-to-br from-pink-100 to-red-100 rounded-2xl mb-3 flex items-center justify-center overflow-hidden product-spotlight shadow-md group-hover:shadow-xl transition-shadow">
+                        <img src="images/category-necklaces.png" alt="Necklaces"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                    </div>
+                    <h3 class="font-semibold text-center">Necklaces 💖</h3>
+                    <p class="text-xs text-gray-500 text-center">30+ Designs</p>
+                </a>
+
+                <a href="collection.html?category=bracelets" class="category-card group">
+                    <div
+                        class="aspect-square bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl mb-3 flex items-center justify-center overflow-hidden product-spotlight shadow-md group-hover:shadow-xl transition-shadow">
+                        <img src="images/category-bracelets.png" alt="Bracelets"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                    </div>
+                    <h3 class="font-semibold text-center">Bracelets ✨</h3>
+                    <p class="text-xs text-gray-500 text-center">20+ Designs</p>
+                </a>
+
+                <a href="collection.html?category=couple" class="category-card group">
+                    <div
+                        class="aspect-square bg-gradient-to-br from-red-100 to-pink-100 rounded-2xl mb-3 flex items-center justify-center overflow-hidden product-spotlight shadow-md group-hover:shadow-xl transition-shadow">
+                        <img src="images/category-couple.png" alt="Couple Jewelry"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                    </div>
+                    <h3 class="font-semibold text-center">Couple Jewelry 💑</h3>
+                    <p class="text-xs text-gray-500 text-center">15+ Sets</p>
+                </a>
+
+                <a href="collection.html?category=minimal" class="category-card group">
+                    <div
+                        class="aspect-square bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl mb-3 flex items-center justify-center overflow-hidden product-spotlight shadow-md group-hover:shadow-xl transition-shadow">
+                        <img src="images/category-minimal.png" alt="Minimal Wear"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                    </div>
+                    <h3 class="font-semibold text-center">Minimal Daily Wear</h3>
+                    <p class="text-xs text-gray-500 text-center">18+ Designs</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-16" style="background: linear-gradient(to bottom, white, #F8BBD0);">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-playfair text-3xl md:text-4xl font-bold mb-4 text-purple-900">Valentine Bestsellers 🔥
+                </h2>
+                <p class="text-gray-700">Most loved pieces this season - Limited stock!</p>
+            </div>
+
+            <div id="featuredProducts" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <!-- Products will be loaded via JS -->
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="collection.html" class="cta-button-primary inline-flex items-center">
+                    View All Products
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Button (Sticky) -->
+    <a href="https://wa.me/1234567890" target="_blank"
+        class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-purple-900 to-pink-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- Brand -->
+                <div>
+                    <img src="images/RUVA transprent Logo.png" alt="RUVA" class="h-16 mb-4 brightness-0 invert">
+                    <h3 class="font-playfair text-2xl font-bold mb-4">RUVA</h3>
+                    <p class="text-pink-200 mb-4">Elegance that Speaks Love</p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-pink-600 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-pink-600 transition">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-pink-600 transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-pink-200">
+                        <li><a href="collection.html" class="hover:text-white transition">Shop Collection</a></li>
+                        <li><a href="gift-guide.html" class="hover:text-white transition">Gift Guide</a></li>
+                        <li><a href="about.html" class="hover:text-white transition">About RUVA</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Customer Support</h4>
+                    <ul class="space-y-2 text-pink-200">
+                        <li><a href="#" class="hover:text-white transition">Shipping Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Return & Refund</a></li>
+                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Stay Connected</h4>
+                    <p class="text-pink-200 mb-4 text-sm">Get 10% off your first order!</p>
+                    <form class="space-y-3">
+                        <input type="email" placeholder="Your email"
+                            class="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:border-pink-500 text-white placeholder-pink-200">
+                        <button type="submit"
+                            class="w-full bg-pink-600 hover:bg-pink-700 px-6 py-2 rounded-lg font-medium transition">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8">
+                <p class="text-center text-pink-200 text-sm">
+                    © 2026 RUVA. All rights reserved. Made with ❤️ for timeless love.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+    <script src="modern-header.js"></script>
+    <script src="button-effects.js"></script>
+    <script>
+        // Name-based Price Calculator
+        const loveNameInput = document.getElementById('loveName');
+        const calculatedPriceEl = document.getElementById('calculatedPrice');
+        const letterCountEl = document.getElementById('letterCount');
+
+        loveNameInput.addEventListener('input', function () {
+            const name = this.value.trim().toUpperCase();
+            const letterCount = name.length;
+
+            // Concatenate 143 + letterCount (e.g., 6 letters = 1436)
+            const price = letterCount > 0 ? parseInt('143' + letterCount) : 1430;
+
+            letterCountEl.textContent = letterCount;
+            calculatedPriceEl.textContent = `₹${price.toLocaleString('en-IN')}`;
+
+            // Animate on change
+            calculatedPriceEl.style.transition = 'transform 0.2s ease-out';
+            calculatedPriceEl.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                calculatedPriceEl.style.transform = 'scale(1)';
+            }, 200);
+        });
+
+        // Simulate live viewers count in header only (8568 to 12658)
+        function updateLiveViewers() {
+            const viewers = 8568 + Math.floor(Math.random() * 4091);
+            const formatted = viewers.toLocaleString('en-IN');
+
+            // Update header live viewers
+            const headerViewers = document.getElementById('headerLiveViewers');
+            if (headerViewers) {
+                headerViewers.textContent = formatted;
+            }
+        }
+        setInterval(updateLiveViewers, 8000);
+        updateLiveViewers(); // Call immediately on load
+
+        // Advanced FOMO Logic
+        let stockCount = 23;
+        const stockBadge = document.getElementById('stockCountBadge');
+        const soldFastMsg = document.getElementById('stock sold-fast');
+        const cartNotification = document.getElementById('cartActivityNotification');
+
+        // Timer for stock decrease (60 seconds)
+        setTimeout(() => {
+            stockCount = 22;
+            if (stockBadge) {
+                stockBadge.textContent = `Only ${stockCount} pieces left`;
+                stockBadge.classList.add('animate-bounce');
+                setTimeout(() => stockBadge.classList.remove('animate-bounce'), 1000);
+            }
+
+            // Show "Selling out fast" notification
+            if (soldFastMsg) {
+                soldFastMsg.classList.remove('hidden');
+            }
+        }, 60000); // 60 seconds
+
+        // Random "Customer added to cart" notification
+        function showCartNotification() {
+            if (!cartNotification) return;
+
+            const count = Math.floor(Math.random() * 3) + 2; // 2-4 customers
+            document.getElementById('cartActivityText').textContent = `${count} customers added to cart`;
+
+            // Slide in
+            cartNotification.style.opacity = '1';
+            cartNotification.style.transform = 'translateY(0)';
+
+            // Hide after 5 seconds
+            setTimeout(() => {
+                cartNotification.style.opacity = '0';
+                cartNotification.style.transform = 'translateY(20px)';
+            }, 5000);
+        }
+
+        // Show first notification after 10 seconds
+        setTimeout(showCartNotification, 10000);
+
+        // Then show every 45-60 seconds
+        setInterval(showCartNotification, 50000);
+    </script>
+</body>
+
+</html>

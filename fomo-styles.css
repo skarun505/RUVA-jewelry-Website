@@ -1,0 +1,283 @@
+/* FOMO & Urgency Elements */
+
+/* Limited Stock Badge */
+.stock-urgent {
+    background: linear-gradient(135deg, #FF1744 0%, #F50057 100%);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    animation: pulse-urgent 2s infinite;
+}
+
+@keyframes pulse-urgent {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 23, 68, 0.7);
+    }
+
+    50% {
+        box-shadow: 0 0 0 10px rgba(255, 23, 68, 0);
+    }
+}
+
+/* Live Viewers Badge */
+.live-viewers {
+    background: #4CAF50;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.live-viewers::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+/* Flash Sale Badge */
+.flash-sale {
+    background: linear-gradient(135deg, #6B2C91 0%, #FF1744 100%);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-weight: 700;
+    animation: flash-glow 2s infinite;
+}
+
+@keyframes flash-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(255, 23, 68, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(107, 44, 145, 0.8);
+    }
+}
+
+/* Name-Based Price Calculator */
+.name-price-calculator {
+    background: linear-gradient(135deg, #F8BBD0 0%, #E1BEE7 100%);
+    border: 3px solid #6B2C91;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(107, 44, 145, 0.3);
+}
+
+.name-input {
+    border: 2px solid #6B2C91;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #6B2C91;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.name-input:focus {
+    outline: none;
+    border-color: #D81B60;
+    box-shadow: 0 0 0 3px rgba(216, 27, 96, 0.2);
+}
+
+.calculated-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #6B2C91 0%, #D81B60 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Offer Timer */
+.offer-timer {
+    background: #FF1744;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    animation: timer-pulse 1s infinite;
+}
+
+@keyframes timer-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Love Points Badge */
+.love-points {
+    background: linear-gradient(135deg, #FF1744 0%, #C2185B 100%);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Floating Hearts Animation */
+@keyframes float-hearts {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100px) rotate(180deg);
+        opacity: 0;
+    }
+}
+
+.floating-heart {
+    position: absolute;
+    font-size: 24px;
+    animation: float-hearts 3s ease-in-out infinite;
+}
+
+/* Romantic Gradient Background */
+.romantic-bg {
+    background: linear-gradient(135deg,
+            #F8BBD0 0%,
+            #E1BEE7 25%,
+            #CE93D8 50%,
+            #BA68C8 75%,
+            #AB47BC 100%);
+}
+
+/* Valentine Shimmer Effect */
+@keyframes valentine-shimmer {
+    0% {
+        background-position: -200% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+.valentine-shimmer {
+    background: linear-gradient(90deg,
+            #6B2C91 0%,
+            #D81B60 25%,
+            #C2185B 50%,
+            #D81B60 75%,
+            #6B2C91 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: valentine-shimmer 3s linear infinite;
+}
+
+/* Product Spotlight */
+.product-spotlight {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-spotlight::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    animation: spotlight-rotate 8s linear infinite;
+}
+
+@keyframes spotlight-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Sticky Offer Bar - Compact with Infinity Scroll */
+.sticky-offer-bar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: linear-gradient(135deg, #6B2C91 0%, #D81B60 50%, #E91E63 100%);
+    color: white;
+    padding: 0.5rem 0;
+    box-shadow: 0 2px 8px rgba(107, 44, 145, 0.3);
+    overflow: hidden;
+}
+
+/* Scroll Container */
+.offer-scroll-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Scrolling Content */
+.offer-scroll-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    animation: infinity-scroll 30s linear infinite;
+    white-space: nowrap;
+}
+
+/* Pause on hover */
+.offer-scroll-content:hover {
+    animation-play-state: paused;
+}
+
+/* Offer Items */
+.offer-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0 1rem;
+}
+
+/* Infinity Scroll Animation */
+@keyframes infinity-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}

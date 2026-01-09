@@ -1,0 +1,412 @@
+/* ============================================
+   RUVA Modern Sticky Header with Scroll Effects
+   Vanilla CSS Implementation
+   ============================================ */
+
+/* Modern Header Container */
+.modern-header {
+    position: sticky;
+    top: 48px;
+    /* Below smaller sticky offer bar */
+    z-index: 40;
+    background: white;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Scrolled State - Compact & Elevated */
+.modern-header.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(107, 44, 145, 0.15);
+    border-bottom: 1px solid rgba(107, 44, 145, 0.1);
+}
+
+/* Desktop: Rounded header on scroll */
+@media (min-width: 768px) {
+    .modern-header.scrolled {
+        top: 56px;
+        width: calc(100% - 2rem);
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        left: 1rem;
+        right: 1rem;
+        border-radius: 16px;
+        border: 1px solid rgba(107, 44, 145, 0.2);
+    }
+}
+
+/* Navigation Container */
+.modern-header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.modern-header.scrolled nav {
+    padding: 0.75rem 1rem;
+}
+
+/* Logo */
+.modern-header .header-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.modern-header .header-logo img {
+    height: 4rem;
+    transition: all 0.3s ease;
+}
+
+.modern-header.scrolled .header-logo img {
+    height: 3rem;
+}
+
+.modern-header .header-logo-text {
+    transition: all 0.3s ease;
+}
+
+.modern-header.scrolled .header-logo-text {
+    opacity: 0.9;
+}
+
+/* Desktop Menu */
+.modern-header .desktop-menu {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .modern-header .desktop-menu {
+        display: flex;
+    }
+}
+
+.modern-header .desktop-menu a {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #4B5563;
+    transition: all 0.2s ease;
+    border-radius: 8px;
+    position: relative;
+}
+
+.modern-header .desktop-menu a:hover {
+    color: #6B2C91;
+    background: rgba(107, 44, 145, 0.05);
+}
+
+.modern-header .desktop-menu a.active {
+    color: #6B2C91;
+    font-weight: 600;
+}
+
+/* Active indicator */
+.modern-header .desktop-menu a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background: #6B2C91;
+    border-radius: 50%;
+}
+
+/* Icon Container */
+.modern-header .header-icons {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Live Viewers Badge in Header */
+.header-live-viewers {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(76, 175, 80, 0.1);
+    padding: 0.5rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #4CAF50;
+    border: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background: #4CAF50;
+    border-radius: 50%;
+    animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+}
+
+.modern-header .header-icon {
+    position: relative;
+    color: #4B5563;
+    transition: all 0.2s ease;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.modern-header .header-icon:hover {
+    color: #6B2C91;
+    background: rgba(107, 44, 145, 0.05);
+}
+
+/* Cart Badge */
+.modern-header .cart-badge {
+    position: absolute;
+    top: 0px;
+    right: -2px;
+    background: linear-gradient(135deg, #6B2C91, #D81B60);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    animation: cart-pulse 2s ease-in-out infinite;
+}
+
+@keyframes cart-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Hamburger Menu Button */
+.hamburger-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    background: white;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.hamburger-btn:hover {
+    background: rgba(107, 44, 145, 0.05);
+    border-color: #6B2C91;
+}
+
+@media (min-width: 768px) {
+    .hamburger-btn {
+        display: none;
+    }
+}
+
+/* Animated Hamburger Icon */
+.hamburger-icon {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.hamburger-btn.open .hamburger-icon {
+    transform: rotate(-45deg);
+}
+
+.hamburger-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+.hamburger-icon .menu-line-1 {
+    transition: all 0.3s ease;
+    stroke-dasharray: 12 63;
+}
+
+.hamburger-btn.open .hamburger-icon .menu-line-1 {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42px;
+}
+
+.hamburger-icon .menu-line-2 {
+    transition: all 0.2s ease;
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 128px;
+    /* Below header */
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: none;
+    overflow-y: auto;
+    border-top: 1px solid rgba(107, 44, 145, 0.1);
+}
+
+.mobile-menu-overlay.open {
+    display: block;
+    animation: mobile-menu-fade-in 0.3s ease-out;
+}
+
+@keyframes mobile-menu-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Mobile Menu Content */
+.mobile-menu-content {
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    animation: mobile-menu-slide-in 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes mobile-menu-slide-in {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.mobile-menu-links {
+    display: grid;
+    gap: 0.5rem;
+    margin-bottom: auto;
+}
+
+.mobile-menu-links a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #4B5563;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #E5E7EB;
+    transition: all 0.2s ease;
+}
+
+.mobile-menu-links a:hover,
+.mobile-menu-links a.active {
+    color: #6B2C91;
+    background: rgba(107, 44, 145, 0.05);
+    border-color: #6B2C91;
+    transform: translateX(4px);
+}
+
+.mobile-menu-links a.active {
+    font-weight: 600;
+}
+
+/* Mobile Menu Actions */
+.mobile-menu-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #E5E7EB;
+}
+
+.mobile-menu-actions .btn-outline {
+    padding: 0.875rem 1.5rem;
+    font-weight: 600;
+    border: 2px solid #6B2C91;
+    color: #6B2C91;
+    background: white;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.mobile-menu-actions .btn-outline:hover {
+    background: rgba(107, 44, 145, 0.05);
+}
+
+.mobile-menu-actions .btn-primary {
+    padding: 0.875rem 1.5rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #6B2C91, #D81B60);
+    color: white;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(107, 44, 145, 0.3);
+}
+
+.mobile-menu-actions .btn-primary:hover {
+    box-shadow: 0 6px 16px rgba(107, 44, 145, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Prevent scroll when mobile menu open */
+body.menu-open {
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    body.menu-open {
+        overflow: auto;
+    }
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+    -webkit-tap-highlight-color: transparent;
+}

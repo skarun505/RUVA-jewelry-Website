@@ -1,0 +1,103 @@
+<!-- 
+UPDATED NOTIFICATION BAR FOR index.html
+Replace lines 47-66 with this code for infinity scrolling effect
+-->
+
+<!-- FOMO Sticky Offer Bar with Infinity Scrolling -->
+<div class="sticky-offer-bar overflow-hidden">
+    <div class="scrolling-wrapper">
+        <div class="scrolling-content">
+            <!-- First Set -->
+            <div class="scroll-item">
+                <span class="animate-pulse">🔥 FLASH SALE:</span>
+                <span class="ml-2 hidden sm:inline">Buy ANY 2 @ ₹999 + Name Jewel @ ₹143[X]!</span>
+                <span class="ml-2 sm:hidden">2 @ ₹999 + Love Name Deal!</span>
+            </div>
+            <div class="scroll-item">
+                <span class="live-viewers">
+                    <span id="liveViewers">8,568</span> viewing
+                </span>
+            </div>
+            <div class="scroll-item">
+                <i class="far fa-clock mr-1"></i>
+                <span>Ends Feb 14</span>
+            </div>
+            <div class="scroll-item">
+                <span class="hidden sm:inline">💝 Free Gift Box + Express Delivery</span>
+                <span class="sm:hidden">💝 Free Gifts</span>
+            </div>
+
+            <!-- Duplicate for seamless infinite scroll -->
+            <div class="scroll-item">
+                <span class="animate-pulse">🔥 FLASH SALE:</span>
+                <span class="ml-2 hidden sm:inline">Buy ANY 2 @ ₹999 + Name Jewel @ ₹143[X]!</span>
+                <span class="ml-2 sm:hidden">2 @ ₹999 + Love Name Deal!</span>
+            </div>
+            <div class="scroll-item">
+                <span class="live-viewers">
+                    <span>8,568</span> viewing
+                </span>
+            </div>
+            <div class="scroll-item">
+                <i class="far fa-clock mr-1"></i>
+                <span>Ends Feb 14</span>
+            </div>
+            <div class="scroll-item">
+                <span class="hidden sm:inline">💝 Free Gift Box + Express Delivery</span>
+                <span class="sm:hidden">💝 Free Gifts</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+ADD THIS CSS TO fomo-styles.css or styles.css:
+-->
+
+/* Infinity Scrolling for Offer Bar */
+.scrolling-wrapper {
+width: 100%;
+overflow: hidden;
+}
+
+.scrolling-content {
+display: flex;
+gap: 48px;
+animation: infinite-scroll 25s linear infinite;
+white-space: nowrap;
+}
+
+.scroll-item {
+flex-shrink: 0;
+font-size: 0.875rem;
+font-weight: 700;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+}
+
+@keyframes infinite-scroll {
+0% {
+transform: translateX(0);
+}
+100% {
+transform: translateX(-50%);
+}
+}
+
+/* Pause on hover (desktop) */
+.scrolling-wrapper:hover .scrolling-content {
+animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+.scroll-item {
+font-size: 0.75rem;
+gap: 4px;
+}
+
+.scrolling-content {
+animation-duration: 18s; /* Faster on mobile */
+gap: 32px;
+}
+}
