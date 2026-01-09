@@ -1,0 +1,312 @@
+/* ============================================
+   RUVA ENHANCED BUTTON DESIGNS
+   Particle Effects, Gradients, Animations
+   ============================================ */
+
+/* Base Button Reset */
+.btn-enhanced {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0.5px;
+}
+
+/* Primary Valentine Button with Gradient */
+.cta-button-primary {
+    background: linear-gradient(135deg, #6B2C91 0%, #D81B60 50%, #E91E63 100%);
+    background-size: 200% 200%;
+    color: white;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    box-shadow: 0 8px 24px rgba(107, 44, 145, 0.4);
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.cta-button-primary::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.cta-button-primary:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.cta-button-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(107, 44, 145, 0.5);
+}
+
+.cta-button-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 16px rgba(107, 44, 145, 0.3);
+}
+
+/* Particle Effect on Click */
+.cta-button-primary.clicked {
+    animation: button-pop 0.3s ease-out;
+}
+
+@keyframes button-pop {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.95);
+    }
+}
+
+/* Secondary Button with Shine Effect */
+.cta-button-secondary {
+    background: white;
+    color: #6B2C91;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: 2px solid #6B2C91;
+    box-shadow: 0 4px 16px rgba(107, 44, 145, 0.2);
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cta-button-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.6),
+            transparent);
+    transition: left 0.5s;
+}
+
+.cta-button-secondary:hover::before {
+    left: 100%;
+}
+
+.cta-button-secondary:hover {
+    background: linear-gradient(135deg, #6B2C91 0%, #D81B60 100%);
+    color: white;
+    border-color: #D81B60;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(107, 44, 145, 0.4);
+}
+
+/* Add to Cart Button with Cart Icon Animation */
+.add-to-cart-btn {
+    background: linear-gradient(135deg, #E91E63 0%, #D81B60 100%);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 6px 20px rgba(233, 30, 99, 0.3);
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.add-to-cart-btn i {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.add-to-cart-btn:hover i {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.add-to-cart-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(233, 30, 99, 0.4);
+}
+
+.add-to-cart-btn:active {
+    transform: scale(0.95);
+}
+
+/* Ripple Effect Container */
+.btn-ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    pointer-events: none;
+    animation: ripple-animation 0.6s ease-out;
+}
+
+@keyframes ripple-animation {
+    from {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* Particle for Particle Effect */
+.particle {
+    position: fixed;
+    pointer-events: none;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    z-index: 9999;
+}
+
+@keyframes particle-burst {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(0);
+        opacity: 0;
+    }
+}
+
+/* Start Shopping Button - Special Glowing Effect */
+.btn-start-shopping {
+    background: linear-gradient(135deg, #D81B60 0%, #C2185B 100%);
+    color: white;
+    padding: 16px 40px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    box-shadow: 0 0 20px rgba(216, 27, 96, 0.4),
+        0 0 40px rgba(216, 27, 96, 0.2);
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    animation: glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(216, 27, 96, 0.4),
+            0 0 40px rgba(216, 27, 96, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(216, 27, 96, 0.6),
+            0 0 60px rgba(216, 27, 96, 0.3);
+    }
+}
+
+.btn-start-shopping:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 0 30px rgba(216, 27, 96, 0.6),
+        0 0 60px rgba(216, 27, 96, 0.4);
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+
+    .cta-button-primary,
+    .cta-button-secondary,
+    .btn-start-shopping {
+        width: 100%;
+        padding: 14px 24px;
+        font-size: 0.875rem;
+        justify-content: center;
+    }
+
+    .add-to-cart-btn {
+        padding: 12px 20px;
+        font-size: 0.875rem;
+    }
+}
+
+/* Success State Animation */
+@keyframes success-bounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(0.95);
+    }
+
+    75% {
+        transform: scale(1.05);
+    }
+}
+
+.btn-success {
+    animation: success-bounce 0.5s ease;
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%) !important;
+}
+
+/* Heart Pulse Animation for Love-themed Buttons */
+@keyframes heart-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.btn-love-pulse:hover {
+    animation: heart-pulse 1s ease infinite;
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | RUVA</title>
+    <meta name="description" content="Your RUVA Shopping Cart - Review your selected items">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="button-animations.css">
+</head>
+
+<body class="font-inter bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <div class="flex items-center">
+                    <a href="index.html">
+                        <h1 class="text-2xl md:text-3xl font-playfair font-bold">
+                            <span class="text-rose-600">RUVA</span>
+                        </h1>
+                    </a>
+                </div>
+
+                <ul class="hidden md:flex space-x-8 font-medium text-gray-700">
+                    <li><a href="index.html" class="hover:text-rose-600 transition">Home</a></li>
+                    <li><a href="collection.html" class="hover:text-rose-600 transition">Valentine Collection</a></li>
+                    <li><a href="gift-guide.html" class="hover:text-rose-600 transition">Gift Guide</a></li>
+                </ul>
+
+                <div class="flex items-center space-x-4">
+                    <a href="cart.html" class="relative text-rose-600">
+                        <i class="fas fa-shopping-bag text-xl"></i>
+                        <span id="cartCount"
+                            class="absolute -top-2 -right-2 bg-rose-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Section -->
+    <section class="py-8 md:py-12 min-h-screen">
+        <div class="container mx-auto px-4">
+
+            <!-- Page Header -->
+            <div class="mb-8">
+                <h1 class="font-playfair text-3xl md:text-4xl font-bold mb-2">Shopping Cart</h1>
+                <div class="flex items-center gap-2 text-sm text-gray-600">
+                    <a href="index.html" class="hover:text-rose-600">Home</a>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                    <span class="text-rose-600">Cart</span>
+                </div>
+            </div>
+
+            <div id="cartContent">
+                <!-- Cart items will be loaded here -->
+            </div>
+
+            <!-- Empty Cart State -->
+            <div id="emptyCart" class="hidden text-center py-20">
+                <i class="fas fa-shopping-bag text-8xl text-gray-300 mb-6"></i>
+                <h2 class="font-playfair text-3xl font-bold text-gray-700 mb-4">Your Cart is Empty</h2>
+                <p class="text-gray-500 mb-8">Add some beautiful jewelry to your cart!</p>
+                <a href="collection.html" class="cta-button-primary inline-flex items-center">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Continue Shopping
+                </a>
+            </div>
+
+            <!-- Cart with Items -->
+            <div id="cartWithItems" class="hidden">
+                <div class="grid md:grid-cols-3 gap-8">
+
+                    <!-- Cart Items -->
+                    <div class="md:col-span-2 space-y-4">
+                        <div id="cartItems">
+                            <!-- Items loaded via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Cart Summary (Sticky on Desktop) -->
+                    <div class="md:col-span-1">
+                        <div class="bg-white rounded-2xl p-6 shadow-lg sticky top-6">
+                            <h2 class="font-playfair text-2xl font-bold mb-6">Order Summary</h2>
+
+                            <!-- Coupon Code -->
+                            <div class="mb-6">
+                                <label class="form-label">Coupon Code</label>
+                                <div class="flex gap-2">
+                                    <input type="text" id="couponInput" placeholder="VALLOVE25"
+                                        class="form-input flex-1">
+                                    <button id="applyCouponBtn"
+                                        class="px-6 bg-rose-600 text-white rounded-xl font-semibold hover:bg-rose-700 transition">
+                                        Apply
+                                    </button>
+                                </div>
+                                <p id="couponMessage" class="text-sm mt-2 hidden"></p>
+                            </div>
+
+                            <!-- Gift Wrap Option -->
+                            <div class="mb-6 border-t pt-6">
+                                <label class="flex items-center gap-3 cursor-pointer">
+                                    <input type="checkbox" id="giftWrap" class="custom-radio">
+                                    <div>
+                                        <p class="font-semibold">Add Gift Wrap 🎁</p>
+                                        <p class="text-xs text-green-600">Free for Valentine's Day</p>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <!-- Price Breakdown -->
+                            <div class="space-y-3 mb-6 border-t pt-6">
+                                <div class="flex justify-between text-gray-600">
+                                    <span>Subtotal</span>
+                                    <span id="subtotal">₹0</span>
+                                </div>
+                                <div class="flex justify-between text-gray-600">
+                                    <span>Discount</span>
+                                    <span id="discountAmount" class="text-green-600">-₹0</span>
+                                </div>
+                                <div class="flex justify-between text-gray-600">
+                                    <span>Delivery</span>
+                                    <span id="delivery" class="text-green-600">FREE</span>
+                                </div>
+                                <div class="flex justify-between font-bold text-lg border-t pt-3">
+                                    <span>Total</span>
+                                    <span id="total" class="text-rose-600">₹0</span>
+                                </div>
+                            </div>
+
+                            <!-- Estimated Delivery -->
+                            <div class="bg-green-50 rounded-xl p-4 mb-6">
+                                <p class="text-sm text-gray-700">
+                                    <i class="fas fa-shipping-fast text-green-600 mr-2"></i>
+                                    <strong>Estimated Delivery:</strong><br>
+                                    <span class="text-green-700">Feb 12-13, 2026</span> (arrives before Valentine's Day
+                                    💝)
+                                </p>
+                            </div>
+
+                            <!-- Checkout Button -->
+                            <button id="checkoutBtn" class="w-full cta-button-primary mb-3">
+                                Proceed to Checkout
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+
+                            <a href="collection.html"
+                                class="block text-center text-rose-600 font-medium hover:underline">
+                                Continue Shopping
+                            </a>
+
+                            <!-- Trust Badges -->
+                            <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t">
+                                <div class="text-center">
+                                    <i class="fas fa-shield-alt text-2xl text-green-600 mb-1"></i>
+                                    <p class="text-xs">Secure</p>
+                                </div>
+                                <div class="text-center">
+                                    <i class="fas fa-undo text-2xl text-blue-600 mb-1"></i>
+                                    <p class="text-xs">7-Day Return</p>
+                                </div>
+                                <div class="text-center">
+                                    <i class="fas fa-certificate text-2xl text-purple-600 mb-1"></i>
+                                    <p class="text-xs">925 Silver</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- You May Also Like -->
+                <div class="mt-16">
+                    <h2 class="font-playfair text-3xl font-bold text-center mb-8">Complete Your Look</h2>
+                    <div id="suggestedProducts" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                        <!-- Suggested products loaded via JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/1234567890" target="_blank"
+        class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="font-playfair text-2xl font-bold mb-4">RUVA</h3>
+                    <p class="text-gray-400 mb-4">Elegance that Speaks Love</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="collection.html" class="hover:text-rose-400 transition">Shop Collection</a></li>
+                        <li><a href="gift-guide.html" class="hover:text-rose-400 transition">Gift Guide</a></li>
+                        <li><a href="about.html" class="hover:text-rose-400 transition">About RUVA</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Customer Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-rose-400 transition">Shipping Policy</a></li>
+                        <li><a href="#" class="hover:text-rose-400 transition">Return & Refund</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <p class="text-gray-400 text-sm">Email: love@ruva.in</p>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8">
+                <p class="text-center text-gray-400 text-sm">
+                    © 2026 RUVA. All rights reserved. Made with ❤️ for timeless love.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+    <script src="button-effects.js"></script>
+    <script src="cart-page.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | RUVA - Secure Payment</title>
+    <meta name="description" content="Complete your RUVA purchase - Secure checkout with multiple payment options">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/RUVA transprent Logo.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fomo-styles.css">
+    <link rel="stylesheet" href="button-animations.css">
+    <link rel="stylesheet" href="modern-header.css">
+
+    <style>
+        .bg-purple-primary {
+            background: #6B2C91;
+        }
+
+        .text-purple-primary {
+            color: #6B2C91;
+        }
+
+        .border-purple-primary {
+            border-color: #6B2C91;
+        }
+
+        /* Payment Method Cards */
+        .payment-method {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid #E5E7EB;
+        }
+
+        .payment-method:hover {
+            border-color: #6B2C91;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(107, 44, 145, 0.1);
+        }
+
+        .payment-method.selected {
+            border-color: #6B2C91;
+            background: linear-gradient(135deg, rgba(107, 44, 145, 0.05) 0%, rgba(216, 27, 96, 0.05) 100%);
+        }
+
+        .payment-method .checkmark {
+            display: none;
+        }
+
+        .payment-method.selected .checkmark {
+            display: block;
+        }
+
+        /* Progress Steps */
+        .step {
+            position: relative;
+        }
+
+        .step::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            width: 100%;
+            height: 2px;
+            background: #E5E7EB;
+            z-index: -1;
+        }
+
+        .step:last-child::after {
+            display: none;
+        }
+
+        .step.completed .step-circle {
+            background: #6B2C91;
+            color: white;
+        }
+
+        .step.active .step-circle {
+            background: #D81B60;
+            color: white;
+        }
+
+        /* Card Input Animation */
+        .card-input:focus {
+            border-color: #6B2C91;
+            box-shadow: 0 0 0 3px rgba(107, 44, 145, 0.1);
+        }
+
+        /* Success Animation */
+        @keyframes successPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .success-icon {
+            animation: successPulse 0.6s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="font-inter bg-gray-50">
+
+    <!-- Modern Header -->
+    <nav class="modern-header">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html" class="header-logo">
+                        <img src="images/RUVA transprent Logo.png" alt="RUVA Logo">
+                        <div class="header-logo-text hidden md:block">
+                            <h1 class="text-xl font-playfair font-bold text-purple-primary">RUVA</h1>
+                            <p class="text-xs text-gray-600">A New Era of Jewelry</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Secure Checkout Badge -->
+                <div class="flex items-center gap-2 bg-green-50 px-4 py-2 rounded-full">
+                    <i class="fas fa-lock text-green-600"></i>
+                    <span class="text-sm font-semibold text-green-700">Secure Checkout</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Progress Steps -->
+    <section class="bg-white py-6 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center items-center max-w-2xl mx-auto">
+                <div class="step completed flex-1 text-center">
+                    <div
+                        class="step-circle w-10 h-10 rounded-full bg-gray-200 mx-auto flex items-center justify-center font-bold mb-2">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <p class="text-xs md:text-sm font-medium">Cart</p>
+                </div>
+                <div class="step active flex-1 text-center">
+                    <div
+                        class="step-circle w-10 h-10 rounded-full bg-gray-200 mx-auto flex items-center justify-center font-bold mb-2">
+                        2
+                    </div>
+                    <p class="text-xs md:text-sm font-medium">Checkout</p>
+                </div>
+                <div class="step flex-1 text-center">
+                    <div
+                        class="step-circle w-10 h-10 rounded-full bg-gray-200 mx-auto flex items-center justify-center font-bold mb-2">
+                        3
+                    </div>
+                    <p class="text-xs md:text-sm font-medium">Payment</p>
+                </div>
+                <div class="step flex-1 text-center">
+                    <div
+                        class="step-circle w-10 h-10 rounded-full bg-gray-200 mx-auto flex items-center justify-center font-bold mb-2">
+                        4
+                    </div>
+                    <p class="text-xs md:text-sm font-medium">Confirmation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Form -->
+    <section class="py-8 md:py-12 min-h-screen">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <!-- Left Column - Forms -->
+                <div class="md:col-span-2 space-y-6">
+
+                    <!-- Delivery Information -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <h2 class="font-playfair text-2xl font-bold mb-6 flex items-center gap-2">
+                            <i class="fas fa-shipping-fast text-purple-primary"></i>
+                            Delivery Information
+                        </h2>
+
+                        <form id="deliveryForm" class="space-y-4">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="form-label">Full Name *</label>
+                                    <input type="text" id="fullName" required class="form-input card-input"
+                                        placeholder="John Doe">
+                                </div>
+                                <div>
+                                    <label class="form-label">Phone Number *</label>
+                                    <input type="tel" id="phone" required class="form-input card-input"
+                                        placeholder="+91 98765 43210">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="form-label">Email Address *</label>
+                                <input type="email" id="email" required class="form-input card-input"
+                                    placeholder="john@example.com">
+                            </div>
+
+                            <div>
+                                <label class="form-label">Street Address *</label>
+                                <input type="text" id="address" required class="form-input card-input"
+                                    placeholder="123 Love Street">
+                            </div>
+
+                            <div class="grid md:grid-cols-3 gap-4">
+                                <div>
+                                    <label class="form-label">City *</label>
+                                    <input type="text" id="city" required class="form-input card-input"
+                                        placeholder="Mumbai">
+                                </div>
+                                <div>
+                                    <label class="form-label">State *</label>
+                                    <input type="text" id="state" required class="form-input card-input"
+                                        placeholder="Maharashtra">
+                                </div>
+                                <div>
+                                    <label class="form-label">PIN Code *</label>
+                                    <input type="text" id="pincode" required class="form-input card-input"
+                                        placeholder="400001" maxlength="6">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="form-label">Delivery Notes (Optional)</label>
+                                <textarea id="notes" class="form-input card-input" rows="3"
+                                    placeholder="Any special instructions for delivery..."></textarea>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Payment Method -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <h2 class="font-playfair text-2xl font-bold mb-6 flex items-center gap-2">
+                            <i class="fas fa-credit-card text-purple-primary"></i>
+                            Payment Method
+                        </h2>
+
+                        <div class="grid md:grid-cols-3 gap-4 mb-6">
+                            <div class="payment-method selected rounded-xl p-4 relative" data-method="card">
+                                <i class="fas fa-credit-card text-3xl text-purple-primary mb-2"></i>
+                                <p class="font-semibold">Card</p>
+                                <p class="text-xs text-gray-500">Credit/Debit</p>
+                                <i
+                                    class="fas fa-check-circle checkmark absolute top-2 right-2 text-purple-primary text-xl"></i>
+                            </div>
+                            <div class="payment-method rounded-xl p-4 relative" data-method="upi">
+                                <i class="fab fa-google-pay text-3xl text-purple-primary mb-2"></i>
+                                <p class="font-semibold">UPI</p>
+                                <p class="text-xs text-gray-500">Google Pay, PhonePe</p>
+                                <i
+                                    class="fas fa-check-circle checkmark absolute top-2 right-2 text-purple-primary text-xl"></i>
+                            </div>
+                            <div class="payment-method rounded-xl p-4 relative" data-method="cod">
+                                <i class="fas fa-money-bill-wave text-3xl text-purple-primary mb-2"></i>
+                                <p class="font-semibold">COD</p>
+                                <p class="text-xs text-gray-500">Cash on Delivery</p>
+                                <i
+                                    class="fas fa-check-circle checkmark absolute top-2 right-2 text-purple-primary text-xl"></i>
+                            </div>
+                        </div>
+
+                        <!-- Card Payment Form -->
+                        <div id="cardPaymentForm" class="space-y-4">
+                            <div>
+                                <label class="form-label">Card Number *</label>
+                                <input type="text" id="cardNumber" class="form-input card-input"
+                                    placeholder="1234 5678 9012 3456" maxlength="19">
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="form-label">Expiry Date *</label>
+                                    <input type="text" id="expiryDate" class="form-input card-input" placeholder="MM/YY"
+                                        maxlength="5">
+                                </div>
+                                <div>
+                                    <label class="form-label">CVV *</label>
+                                    <input type="text" id="cvv" class="form-input card-input" placeholder="123"
+                                        maxlength="3">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="form-label">Cardholder Name *</label>
+                                <input type="text" id="cardholderName" class="form-input card-input"
+                                    placeholder="JOHN DOE">
+                            </div>
+                        </div>
+
+                        <!-- UPI Payment Form -->
+                        <div id="upiPaymentForm" class="hidden space-y-4">
+                            <div>
+                                <label class="form-label">UPI ID *</label>
+                                <input type="text" id="upiId" class="form-input card-input"
+                                    placeholder="yourname@paytm">
+                            </div>
+                            <div class="bg-purple-50 rounded-xl p-4">
+                                <p class="text-sm text-purple-900">
+                                    <i class="fas fa-info-circle mr-2"></i>
+                                    You will receive a payment request on your UPI app
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- COD Info -->
+                        <div id="codPaymentForm" class="hidden">
+                            <div class="bg-green-50 rounded-xl p-4">
+                                <p class="text-sm text-gray-700">
+                                    <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                                    <strong>Cash on Delivery Available</strong><br>
+                                    Pay when you receive your order. Please keep exact change ready.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Column - Order Summary -->
+                <div class="md:col-span-1">
+                    <div class="bg-white rounded-2xl p-6 shadow-lg sticky top-6">
+                        <h2 class="font-playfair text-2xl font-bold mb-6">Order Summary</h2>
+
+                        <!-- Order Items -->
+                        <div id="orderItems" class="space-y-4 mb-6 max-h-64 overflow-y-auto">
+                            <!-- Items loaded via JS -->
+                        </div>
+
+                        <!-- Price Breakdown -->
+                        <div class="space-y-3 mb-6 border-t pt-6">
+                            <div class="flex justify-between text-gray-600">
+                                <span>Subtotal</span>
+                                <span id="checkoutSubtotal">₹0</span>
+                            </div>
+                            <div class="flex justify-between text-gray-600">
+                                <span>Discount</span>
+                                <span id="checkoutDiscount" class="text-green-600">-₹0</span>
+                            </div>
+                            <div class="flex justify-between text-gray-600">
+                                <span>Delivery</span>
+                                <span class="text-green-600">FREE</span>
+                            </div>
+                            <div class="flex justify-between font-bold text-lg border-t pt-3">
+                                <span>Total</span>
+                                <span id="checkoutTotal" class="text-purple-primary">₹0</span>
+                            </div>
+                        </div>
+
+                        <!-- Place Order Button -->
+                        <button id="placeOrderBtn" class="w-full cta-button-primary mb-4">
+                            <i class="fas fa-lock mr-2"></i>
+                            Place Order Securely
+                        </button>
+
+                        <p class="text-xs text-center text-gray-500">
+                            By placing this order, you agree to our Terms & Conditions
+                        </p>
+
+                        <!-- Trust Badges -->
+                        <div class="grid grid-cols-3 gap-3 mt-6 pt-6 border-t">
+                            <div class="text-center">
+                                <i class="fas fa-shield-alt text-2xl text-green-600 mb-1"></i>
+                                <p class="text-xs">Secure</p>
+                            </div>
+                            <div class="text-center">
+                                <i class="fas fa-undo text-2xl text-blue-600 mb-1"></i>
+                                <p class="text-xs">7-Day Return</p>
+                            </div>
+                            <div class="text-center">
+                                <i class="fas fa-certificate text-2xl text-purple-600 mb-1"></i>
+                                <p class="text-xs">925 Silver</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div id="successModal"
+        class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center transform scale-0 transition-transform duration-500"
+            id="successModalContent">
+            <div class="success-icon w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-check text-4xl text-green-600"></i>
+            </div>
+            <h2 class="font-playfair text-3xl font-bold mb-4">Order Placed Successfully! 🎉</h2>
+            <p class="text-gray-600 mb-2">Thank you for your purchase!</p>
+            <p class="text-sm text-gray-500 mb-6">Order ID: <span id="orderId" class="font-mono font-bold"></span></p>
+
+            <div class="bg-purple-50 rounded-xl p-4 mb-6">
+                <p class="text-sm text-purple-900">
+                    <i class="fas fa-shipping-fast mr-2"></i>
+                    <strong>Estimated Delivery:</strong><br>
+                    <span class="text-purple-700">Feb 12-13, 2026</span> (before Valentine's Day 💝)
+                </p>
+            </div>
+
+            <div class="space-y-3">
+                <button onclick="window.location.href='index.html'" class="w-full cta-button-primary">
+                    <i class="fas fa-home mr-2"></i>
+                    Back to Home
+                </button>
+                <button onclick="window.location.href='collection.html'" class="w-full cta-button-secondary">
+                    <i class="fas fa-shopping-bag mr-2"></i>
+                    Continue Shopping
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/1234567890" target="_blank"
+        class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+    <script src="button-effects.js"></script>
+    <script src="checkout.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Product Details | RUVA</title>
+    <meta name="description" content="Premium 925 Sterling Silver Jewelry">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="button-animations.css">
+</head>
+
+<body class="font-inter bg-white">
+
+    <!-- Offer Banner -->
+    <div id="offerBanner"
+        class="bg-gradient-to-r from-rose-600 to-pink-500 text-white py-3 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between flex-wrap gap-2 text-center md:text-left">
+                <div class="flex-1 text-sm md:text-base font-medium">
+                    <span class="inline-block">🎁 Valentine Special:</span>
+                    <span class="font-bold ml-2">25% OFF + Free Gift Box + Free Express Delivery</span>
+                </div>
+                <div id="countdown" class="text-xs md:text-sm font-bold bg-white/20 px-4 py-1 rounded-full">
+                    <i class="far fa-clock mr-1"></i>
+                    <span id="timer">5d 23h 45m</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-12 z-40">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <div class="flex items-center">
+                    <a href="index.html">
+                        <h1 class="text-2xl md:text-3xl font-playfair font-bold">
+                            <span class="text-rose-600">RUVA</span>
+                        </h1>
+                    </a>
+                </div>
+
+                <ul class="hidden md:flex space-x-8 font-medium text-gray-700">
+                    <li><a href="index.html" class="hover:text-rose-600 transition">Home</a></li>
+                    <li><a href="collection.html" class="hover:text-rose-600 transition">Valentine Collection</a></li>
+                    <li><a href="gift-guide.html" class="hover:text-rose-600 transition">Gift Guide</a></li>
+                    <li><a href="about.html" class="hover:text-rose-600 transition">About</a></li>
+                </ul>
+
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-rose-600 transition">
+                        <i class="far fa-heart text-xl"></i>
+                    </a>
+                    <a href="cart.html" class="relative text-gray-700 hover:text-rose-600 transition">
+                        <i class="fas fa-shopping-bag text-xl"></i>
+                        <span id="cartCount"
+                            class="absolute -top-2 -right-2 bg-rose-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                    </a>
+                    <button id="mobileMenuBtn" class="md:hidden text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Detail Section -->
+    <section class="py-8 md:py-16">
+        <div class="container mx-auto px-4">
+            <!-- Breadcrumb -->
+            <div class="flex items-center gap-2 text-sm text-gray-600 mb-8">
+                <a href="index.html" class="hover:text-rose-600">Home</a>
+                <i class="fas fa-chevron-right text-xs"></i>
+                <a href="collection.html" class="hover:text-rose-600">Collection</a>
+                <i class="fas fa-chevron-right text-xs"></i>
+                <span id="breadcrumbProduct" class="text-rose-600">Product</span>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+
+                <!-- Product Images -->
+                <div>
+                    <!-- Main Image -->
+                    <div
+                        class="mb-4 bg-gradient-to-br from-pink-50 to-rose-50 rounded-3xl overflow-hidden aspect-square">
+                        <img id="mainImage" src="" alt="Product" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Thumbnail Images (Swipeable on Mobile) -->
+                    <div class="swipe-gallery gap-3">
+                        <div id="thumbnails" class="flex gap-3">
+                            <!-- Thumbnails loaded via JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="space-y-6">
+                    <!-- Product Name -->
+                    <div>
+                        <span id="productCategory"
+                            class="inline-block bg-rose-100 text-rose-600 px-3 py-1 rounded-full text-sm font-medium mb-3"></span>
+                        <h1 id="productName" class="font-playfair text-3xl md:text-4xl font-bold mb-2"></h1>
+                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                            <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span class="ml-2">4.9 (127 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="flex items-center gap-4">
+                        <span id="productPrice" class="text-4xl font-bold text-gray-900"></span>
+                        <span id="productOriginalPrice" class="text-xl text-gray-400 line-through"></span>
+                        <span id="productDiscount" class="product-discount text-base"></span>
+                    </div>
+
+                    <!-- Offer Highlight -->
+                    <div class="bg-gradient-to-r from-rose-50 to-pink-50 border-2 border-rose-200 rounded-2xl p-4">
+                        <p class="font-semibold text-rose-600 mb-2">🎁 Valentine's Special Offer</p>
+                        <ul class="space-y-1 text-sm text-gray-700">
+                            <li>✓ Flat 25% OFF (Already Applied)</li>
+                            <li>✓ Free Premium Gift Box</li>
+                            <li>✓ Free Express Delivery</li>
+                            <li>✓ Use Code: <strong class="text-rose-600">VALLOVE25</strong></li>
+                        </ul>
+                    </div>
+
+                    <!-- Description -->
+                    <div>
+                        <p id="productDescription" class="text-gray-600 leading-relaxed"></p>
+                    </div>
+
+                    <!-- Product Details -->
+                    <div class="space-y-3 bg-gray-50 rounded-2xl p-6">
+                        <div class="flex items-center justify-between border-b border-gray-200 pb-3">
+                            <span class="text-gray-600">Material:</span>
+                            <span id="productMaterial" class="font-semibold"></span>
+                        </div>
+                        <div class="flex items-center justify-between border-b border-gray-200 pb-3">
+                            <span class="text-gray-600">Adjustable:</span>
+                            <span id="productAdjustable" class="font-semibold"></span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-600">Availability:</span>
+                            <span id="productStock" class="font-semibold"></span>
+                        </div>
+                    </div>
+
+                    <!-- Care Instructions -->
+                    <div class="bg-blue-50 rounded-2xl p-6">
+                        <h3 class="font-semibold mb-3 flex items-center gap-2">
+                            <i class="fas fa-info-circle text-blue-600"></i>
+                            Care Instructions
+                        </h3>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li>• Keep away from perfumes and chemicals</li>
+                            <li>• Store in provided jewelry box</li>
+                            <li>• Clean with soft cloth after use</li>
+                            <li>• Avoid water exposure for long periods</li>
+                        </ul>
+                    </div>
+
+                    <!-- Quantity Selector -->
+                    <div class="flex items-center gap-4">
+                        <span class="font-semibold">Quantity:</span>
+                        <div class="flex items-center border-2 border-gray-200 rounded-xl overflow-hidden">
+                            <button id="decreaseQty" class="px-4 py-2 hover:bg-gray-100 transition">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <input type="number" id="quantity" value="1" min="1" max="10"
+                                class="w-16 text-center border-x-2 border-gray-200 py-2">
+                            <button id="increaseQty" class="px-4 py-2 hover:bg-gray-100 transition">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button id="addToCartBtn" class="flex-1 cta-button-primary">
+                            <i class="fas fa-shopping-bag mr-2"></i>
+                            Add to Cart
+                        </button>
+                        <button id="buyNowBtn"
+                            class="flex-1 bg-gradient-to-r from-pink-600 to-rose-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+                            <i class="fas fa-bolt mr-2"></i>
+                            Buy Now
+                        </button>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-gray-200">
+                        <div class="text-center">
+                            <div
+                                class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <i class="fas fa-certificate text-green-600"></i>
+                            </div>
+                            <p class="text-xs font-medium">925 Hallmark</p>
+                        </div>
+                        <div class="text-center">
+                            <div
+                                class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <i class="fas fa-undo text-blue-600"></i>
+                            </div>
+                            <p class="text-xs font-medium">7-Day Return</p>
+                        </div>
+                        <div class="text-center">
+                            <div
+                                class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                                <i class="fas fa-shield-alt text-purple-600"></i>
+                            </div>
+                            <p class="text-xs font-medium">Secure Payment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="mt-20">
+                <h2 class="font-playfair text-3xl font-bold text-center mb-8">You May Also Like</h2>
+                <div id="relatedProducts" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                    <!-- Related products loaded via JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky Bottom CTA (Mobile Only) -->
+    <div class="sticky-bottom-cta">
+        <div class="flex gap-3">
+            <button id="mobileAddToCart" class="flex-1 bg-rose-600 text-white py-3 rounded-xl font-semibold">
+                Add to Cart
+            </button>
+            <button id="mobileBuyNow"
+                class="flex-1 bg-gradient-to-r from-pink-600 to-rose-600 text-white py-3 rounded-xl font-semibold">
+                Buy Now
+            </button>
+        </div>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/1234567890" target="_blank"
+        class="fixed bottom-24 md:bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8 mt-20">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="font-playfair text-2xl font-bold mb-4">RUVA</h3>
+                    <p class="text-gray-400 mb-4">Elegance that Speaks Love</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="collection.html" class="hover:text-rose-400 transition">Shop Collection</a></li>
+                        <li><a href="gift-guide.html" class="hover:text-rose-400 transition">Gift Guide</a></li>
+                        <li><a href="about.html" class="hover:text-rose-400 transition">About RUVA</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Customer Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-rose-400 transition">Shipping Policy</a></li>
+                        <li><a href="#" class="hover:text-rose-400 transition">Return & Refund</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <p class="text-gray-400 text-sm">Email: love@ruva.in</p>
+                    <p class="text-gray-400 text-sm">Phone: +91 98765 43210</p>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8">
+                <p class="text-center text-gray-400 text-sm">
+                    © 2026 RUVA. All rights reserved. Made with ❤️ for timeless love.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+    <script src="button-effects.js"></script>
+    <script src="product.js"></script>
+</body>
+
+</html>
