@@ -48,25 +48,42 @@
 <body class="font-inter bg-white">
 
     <!-- FOMO Sticky Offer Bar -->
-    <div class="sticky-offer-bar">
-        <div class="offer-scroll-container">
-            <div class="offer-scroll-content">
-                <div class="offer-item">
+    <div class="sticky-offer-bar overflow-hidden">
+        <div class="scrolling-wrapper">
+            <div class="scrolling-content">
+                <div class="scroll-item">
                     <span class="animate-pulse">🔥 FLASH SALE:</span>
-                    <span class="ml-2">Buy ANY 2 @ ₹999 + Get Your Love's Name Jewel @ ₹143[Letter Count]!</span>
+                    <span class="ml-2">Buy ANY 2 @ ₹999 + Name Jewel @ ₹143[X]!</span>
                 </div>
-                <div class="offer-item">
+                <div class="scroll-item">
+                    <span class="live-viewers">
+                        <span id="liveViewers">8,568</span> viewing now
+                    </span>
+                </div>
+                <div class="scroll-item">
                     <i class="far fa-clock mr-1"></i>
-                    <span id="timer">5d 23h 45m</span>
+                    <span>Ends Feb 14</span>
                 </div>
+                <div class="scroll-item">
+                    <span>💝 Free Gift Box + Express Delivery</span>
+                </div>
+
                 <!-- Duplicate for seamless loop -->
-                <div class="offer-item">
+                <div class="scroll-item">
                     <span class="animate-pulse">🔥 FLASH SALE:</span>
-                    <span class="ml-2">Buy ANY 2 @ ₹999 + Get Your Love's Name Jewel @ ₹143[Letter Count]!</span>
+                    <span class="ml-2">Buy ANY 2 @ ₹999 + Name Jewel @ ₹143[X]!</span>
                 </div>
-                <div class="offer-item">
+                <div class="scroll-item">
+                    <span class="live-viewers">
+                        <span id="liveViewers2">8,568</span> viewing now
+                    </span>
+                </div>
+                <div class="scroll-item">
                     <i class="far fa-clock mr-1"></i>
-                    <span id="timer2">5d 23h 45m</span>
+                    <span>Ends Feb 14</span>
+                </div>
+                <div class="scroll-item">
+                    <span>💝 Free Gift Box + Express Delivery</span>
                 </div>
             </div>
         </div>
@@ -520,9 +537,9 @@
             }, 200);
         });
 
-        // Simulate live viewers count in header only (8568 to 12658)
+        // Simulate live viewers count (8568 to 12658)
         function updateLiveViewers() {
-            const viewers = 8568 + Math.floor(Math.random() * 4091);
+            const viewers = 8568 + Math.floor(Math.random() * 4091); // 8568 to 12658
             const formatted = viewers.toLocaleString('en-IN');
 
             // Update header live viewers
@@ -530,6 +547,11 @@
             if (headerViewers) {
                 headerViewers.textContent = formatted;
             }
+
+            // Update notification bar live viewers
+            document.getElementById('liveViewers').textContent = formatted;
+            const viewer2El = document.getElementById('liveViewers2');
+            if (viewer2El) viewer2El.textContent = formatted;
         }
         setInterval(updateLiveViewers, 8000);
         updateLiveViewers(); // Call immediately on load

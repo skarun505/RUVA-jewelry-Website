@@ -356,6 +356,22 @@ html {
     }
 }
 
+/* Responsive Button Styles for Mobile */
+@media (max-width: 640px) {
+
+    .cta-button-primary,
+    .cta-button-secondary {
+        width: 100%;
+        padding: 14px 24px;
+        font-size: 0.875rem;
+    }
+
+    .add-to-cart-btn {
+        padding: 12px 20px;
+        font-size: 0.875rem;
+    }
+}
+
 /* Print Styles */
 @media print {
     .no-print {

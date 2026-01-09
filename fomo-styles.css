@@ -241,14 +241,14 @@
     overflow: hidden;
 }
 
-/* Scroll Container */
-.offer-scroll-container {
+/* Scrolling Wrapper */
+.scrolling-wrapper {
     width: 100%;
     overflow: hidden;
 }
 
 /* Scrolling Content */
-.offer-scroll-content {
+.scrolling-content {
     display: flex;
     align-items: center;
     gap: 3rem;
@@ -257,12 +257,12 @@
 }
 
 /* Pause on hover */
-.offer-scroll-content:hover {
+.scrolling-content:hover {
     animation-play-state: paused;
 }
 
-/* Offer Items */
-.offer-item {
+/* Scroll Items */
+.scroll-item {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
